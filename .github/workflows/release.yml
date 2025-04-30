@@ -19,11 +19,19 @@ jobs:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
+      - name: 🔩 Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
       - name: 🔩 Set up Node
         uses: actions/setup-node@v4
-
-      - name: 🔩 Install dependencies
-        run: pnpm install --frozen-lockfile --network-timeout 300000
+        with:
+          node-version: 20
+          cache: "pnpm"
+          
+      - name: 🔩 Install Deps (immutable)
+        run: pnpm install --no-frozen-lockfile
 
       - name: 🏗 Build library
         run: pnpm build
