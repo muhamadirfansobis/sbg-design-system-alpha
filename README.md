@@ -1,7 +1,8 @@
 
 # Sobatbisnis Group Design System Library
 
-![image](https://res.cloudinary.com/dakonxtdt/image/upload/v1745290166/80d04d4f-e211-4ce6-b944-05e26bf0aad5_ou5xvz.svg)
+![image](https://res.cloudinary.com/dakonxtdt/image/upload/v1746002456/Logo_SEMENTARA_omkbus_1_oot0gc.svg)
+
 Welcome to the **Sobatbisnis Group Design System Library**! This library is built using **React**, **Vite**, and **Tailwind CSS** to provide a robust and efficient design system for your projects.
 
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
@@ -35,12 +36,15 @@ pnpm install
 Import the components you need and start building your UI:
 
 ```jsx
-import { Button } from 'sbg-design-system-alpha';
+import { ThemeProvider, Button } from 'sbg-design-system-alpha';
 
 function App() {
   return (
     <div className="App">
-      <Button label="Click Me" />
+      // Theme data available : "default" | "akasia-365"
+      <ThemeProvider themeData="default">
+        <Button>Click Me</Button>
+      </ThemeProvider>
     </div>
   );
 }
