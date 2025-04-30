@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Sobatbisnis Group Design System Library
 
-Currently, two official plugins are available:
+![image](https://res.cloudinary.com/dakonxtdt/image/upload/v1745290166/80d04d4f-e211-4ce6-b944-05e26bf0aad5_ou5xvz.svg)
+Welcome to the **Sobatbisnis Group Design System Library**! This library is built using **React**, **Vite**, and **Tailwind CSS** to provide a robust and efficient design system for your projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 
-## Expanding the ESLint configuration
+![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![image](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E) ![image](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A fast build tool and development server.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+
+## Features
+
+- **Component-Based Architecture**: Build reusable and maintainable components.
+- **Fast Development**: Leverage Vite for quick builds and hot module replacement.
+- **Customizable Styles**: Use Tailwind CSS for flexible and responsive design.
+
+## Installation
+
+To get started, clone the repository and install the dependencies using PNPM:
+
+```bash
+git clone https://github.com/yourusername/sobatbisnis-design-system-library.git
+cd sobatbisnis-design-system-library
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Import the components you need and start building your UI:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```jsx
+import { Button } from 'sbg-design-system-alpha';
+
+function App() {
+  return (
+    <div className="App">
+      <Button label="Click Me" />
+    </div>
+  );
+}
+
+export default App;
 ```
+
+## Contributing
+
+We welcome contributions! Please read our Contributing Guide to learn how you can help.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Contact
+
+For any questions or feedback, please reach out to us at hello@sobatbisnis.com.
+
+## NPM Package
+
+You can find the NPM package here: https://www.npmjs.com/package/sbg-design-system-alpha
+
+---
+
+Thank you for using the Sobatbisnis Group Design System Library! 🎉
