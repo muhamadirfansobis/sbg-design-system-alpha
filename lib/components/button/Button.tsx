@@ -1,5 +1,4 @@
 import { ComponentProps } from "react";
-import { useTheme } from "../../utils/themeProvider";
 import { BUTTON_VARIANT, VarianKey } from "./constant";
 import { LoadingV2Icon } from "sbg-icon-beta";
 
@@ -32,7 +31,6 @@ const Button = ({
   loading = false,
   disabled = false,
 }: SBGButtonProps) => {
-  const { theme } = useTheme();
   const buttonChildren = loading ? "Loading" : children;
   const buttonIcon = loading ? (
     <LoadingV2Icon color="#ffffff" width={22} />
@@ -42,8 +40,6 @@ const Button = ({
 
   return (
     <button
-      data-theme={theme}
-      type="button"
       className={`flex justify-between content-center gap-2 me-2 mb-2 cursor-pointer px-5 py-2.5 text-sm font-medium disabled:cursor-not-allowed disabled:bg-(--color-primary-300) disabled:text-white ${radius} ${
         BUTTON_VARIANT[type as VarianKey]
       }  ${className}`}

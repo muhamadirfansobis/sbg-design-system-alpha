@@ -1,27 +1,30 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect } from "react";
 
-export type Theme = "default" | "akasia-365" | "ocean" | "rainforest";
+export type Theme = {
+  colors: any;
+};
 
-interface ThemeContextProps {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-}
-
-const ThemeContext = createContext<ThemeContextProps>({
-  theme: "default",
-  setTheme: () => {},
-});
+const ThemeContext = createContext({});
 
 export const ThemeProvider: React.FC<{
   children: React.ReactNode;
   themeData: Theme;
-}> = ({ children, themeData = "default" }) => {
-  const [theme, setTheme] = useState<Theme>(themeData);
+}> = ({ children, themeData }) => {
+  useEffect(() => {
+    if (themeData.colors) {
+      Object.keys(themeData.colors).map((color) => {
+        Object.keys(themeData.colors[color]).map((key) => {
+          document.documentElement.style.setProperty(
+            `--color-${color}-${key}`,
+            themeData.colors[color][key]
+          );
+        });
+      });
+    }
+  }, [themeData]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={themeData}>{children}</ThemeContext.Provider>
   );
 };
 
